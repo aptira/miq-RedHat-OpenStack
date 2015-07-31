@@ -1,0 +1,211 @@
+---
+- description: 
+  buttons: submit,cancel
+  label: Openstack - Deploy Heat Template
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Information
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Options
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: stack_name
+        description: Name of the stack
+        type: DialogFieldTextBox
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Stack Name
+        position: 0
+        validator_type: regex
+        validator_rule: "^[A-Za-z][A-Za-z0-9|-]*$"
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: stack_onfailure
+        description: Select what to do if stack creation failed
+        type: DialogFieldDropDownList
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ROLLBACK
+        values:
+        - - ROLLBACK
+          - Rollback
+        - - DO_NOTHING
+          - Do nothing
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: :description
+          :sort_order: :ascending
+        label: On Failure
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: stack_timeout
+        description: Abort the creation if it does not complete in a proper time window
+        type: DialogFieldTextBox
+        data_type: integer
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Timeout(seconds, optional)
+        position: 2
+        validator_type: regex
+        validator_rule: "^[1-9][0-9]*$"
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+    - description: 
+      display: edit
+      label: Parameters
+      display_method: 
+      display_method_options: 
+      position: 1
+      dialog_fields:
+      - name: param_instance_type
+        description: Flavor name
+        type: DialogFieldTextBox
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: m1.small
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Instance Type
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: param_image_name
+        description: name of the template to deploying
+        type: DialogFieldTextBox
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: rhel-guest-image-7
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Image Name
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: param_pool_name
+        description: Name of external network for floating ip assignment
+        type: DialogFieldTextBox
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: public
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Pool Name
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''

@@ -1,0 +1,250 @@
+---
+- description: OpenStack - CatalogItem - (Simple)
+  buttons: submit,cancel
+  label: OpenStack - CatalogItem - (Simple)
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Main Tab
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Service Information
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: service_name
+        description: 
+        type: DialogFieldTextBox
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Service Name
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: tag_0_environment
+        description: 
+        type: DialogFieldRadioButton
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: dev
+        values:
+        - - dev
+          - Development
+        - - prod
+          - Production
+        - - test
+          - Test
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: :description
+          :sort_order: :ascending
+        label: Environment
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+    - description: 
+      display: edit
+      label: Main Box
+      display_method: 
+      display_method_options: 
+      position: 1
+      dialog_fields:
+      - name: option_1_vm_name
+        description: 
+        type: DialogFieldTextBox
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: VM Name
+        position: 0
+        validator_type: regex
+        validator_rule: "^[a-zA-Z0-9-]{0,12}$"
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: option_1_instance_type
+        description: "/ Integration / RedHat / OpenStack / DynamicDropDowns / List_OpenStack_Flavors"
+        type: DialogFieldDropDownList
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: []
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: Flavor *
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: true
+        load_values_on_init: true
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: "/Integration/RedHat/OpenStack/DynamicDropDowns/List_OpenStack_Flavors"
+      - name: option_1_customization_template_id
+        description: "/ Integration / RedHat / OpenStack / DynamicDropDowns / List_OpenStack_Cloudinit_Templates"
+        type: DialogFieldDropDownList
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: []
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: Cloud-Init
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: true
+        load_values_on_init: true
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: "/Integration/RedHat/OpenStack/DynamicDropDowns/List_OpenStack_Cloudinit_Templates"
+      - name: option_1_volume_0_size
+        description: 
+        type: DialogFieldDropDownList
+        data_type: integer
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: '0'
+        values:
+        - - '0'
+          - "<Default>"
+        - - '20'
+          - 20 GB
+        - - '40'
+          - 40 GB
+        - - '60'
+          - 60 GB
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: :description
+          :sort_order: :ascending
+        label: Volume 0 Size (in GB) *
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: option_1_volume_1_size
+        description: 
+        type: DialogFieldTextBox
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '0'
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Volume 1 Size (in GB)
+        position: 4
+        validator_type: regex
+        validator_rule: "^[0-9]{0,3}$"
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''

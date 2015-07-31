@@ -1,0 +1,107 @@
+---
+- description: Virtual R&D Lab Dialog
+  buttons: submit,cancel
+  label: OpenStack - Generic - Virtual R&D Lab
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Main Tab
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: Main Box
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: stack_name
+        description: 
+        type: DialogFieldTextBox
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Lab Name
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: ''
+      - name: provider_id
+        description: 
+        type: DialogFieldDropDownList
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: []
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: OpenStack Cluster
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: true
+        load_values_on_init: true
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: "/Integration/RedHat/OpenStack/DynamicDropDowns/List_OpenStack_Providers"
+      - name: template_body
+        description: 
+        type: DialogFieldDropDownList
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values: []
+        values_method: 
+        values_method_options: {}
+        options: {}
+        label: Lab Template
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: true
+        load_values_on_init: true
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        resource_action_fqname: "/Integration/RedHat/OpenStack/DynamicDropDowns/ListHeatTemplates"

@@ -1,0 +1,36 @@
+---
+:custom_buttons_sets:
+- name: Openstack Tasks|Vm|
+  description: Openstack Tasks
+  set_type: CustomButtonSet
+  read_only:
+  mode:
+  custom_buttons:
+  - description: Resize_OpenStack_Instance
+    applies_to_class: Vm
+    applies_to_exp:
+    options:
+      :button_image: 1
+      :display: true
+    userid: cloudadmin@example.org
+    wait_for_complete:
+    name: Resize_OpenStack_Instance
+    visibility:
+      :roles:
+      - _ALL_
+    applies_to_id:
+    resource_actions:
+      action:
+      ae_namespace: SYSTEM
+      ae_class: PROCESS
+      ae_instance: Request
+      ae_message: create
+      ae_attributes:
+        request: OpenStack_Resize_Instance
+      dialog_label: OpenStack - ResizeFlavor
+  set_data:
+    :button_order:
+    - Resize_OpenStack_Instance
+    :button_image: 3
+    :display: true
+    :group_index: 3
